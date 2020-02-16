@@ -75,8 +75,13 @@ WSGI_APPLICATION = 'mychruutundruebli.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'NAME': 'user_data',
+        'ENGINE': 'mysql.connector.django',
+        'USER': 'mysql_user',
+        'PASSWORD': 'password',
+        'OPTIONS': {
+          'autocommit': True,
+        },
     }
 }
 
