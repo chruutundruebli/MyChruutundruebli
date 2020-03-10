@@ -43,6 +43,11 @@ INSTALLED_APPS = [
     'impersonate',
 ]
 
+AUTHENTICATION_BACKENDS = (
+    'juntagrico.util.auth.AuthenticateWithEmail',
+    'django.contrib.auth.backends.ModelBackend'
+)
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
