@@ -59,6 +59,8 @@ MIDDLEWARE = [
     'impersonate.middleware.ImpersonateMiddleware',
 ]
 
+SESSION_SERIALIZER = 'django.contrib.sessions.serializers.PickleSerializer'
+
 ROOT_URLCONF = 'mychruutundruebli.urls'
 
 TEMPLATES = [
