@@ -75,10 +75,10 @@ WSGI_APPLICATION = 'mychruutundruebli.wsgi.application'
 
 DATABASES = {
     'default': {
-        'NAME': 'user_data',
-        'ENGINE': 'mysql.connector.django',
-        'USER': 'mysql_user',
-        'PASSWORD': 'password',
+        'NAME': 'mydatabase',
+        'ENGINE': 'django.db.backends.mysql',
+        'USER': 'mydatabaseuser',
+        'PASSWORD': '123password%',
         'OPTIONS': {
           'autocommit': True,
         },
@@ -110,7 +110,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'CH'
 
 USE_I18N = True
 
