@@ -1,9 +1,0 @@
-*.sqlite
-venv/*
-*.pyc
-static/*
-.idea
-*.bak
-ssl/*
-/.project
-*.db
