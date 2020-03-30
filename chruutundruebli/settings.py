@@ -14,7 +14,7 @@ SECRET_KEY = '8cd-j&jo=-#ecd1jjulp_s*7y$n4tad(0d_g)l=6@n^r8fg3rn'
 
 DEBUG = os.environ.get("JUNTAGRICO_DEBUG", 'True')=='True'
 
-ALLOWED_HOSTS = ['my.chruutundruebli.com','chruutundruebli.juntagrico.science', 'localhost',]
+ALLOWED_HOSTS = ['my.chruutundruebli.com','cur.juntagrico.science', 'localhost',]
 
 
 # Application definition
