@@ -161,7 +161,7 @@ ORGANISATION_BANK_CONNECTION = {"PC" : "50-123-80",
             "NAME" : "Raiffeisen",
             "ESR" : ""}
 INFO_EMAIL = "kontakt@chruutundruebli.com"
-SERVER_URL = "www.chruutundruebli.org"
+SERVER_URL = "www.chruutundruebli.com"
 ADMINPORTAL_NAME = "my.chruutundruebli.com"
 ADMINPORTAL_SERVER_URL = "my.chruutundruebli.com"
 SHARE_PRICE = "300"
