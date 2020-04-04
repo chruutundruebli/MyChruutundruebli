@@ -160,7 +160,7 @@ ORGANISATION_BANK_CONNECTION = {"IBAN" : "CH10 8080 8005 2773 1829 2",
             "NAME" : "Raiffeisen",
             "ESR" : ""}
 INFO_EMAIL = "kontakt@chruutundruebli.com"
-SERVER_URL = "www.chruutundruebli.com"
+SERVER_URL = "www.chruutundruebli.com/SoLaWi"
 ADMINPORTAL_NAME = "my.chruutundruebli.com"
 ADMINPORTAL_SERVER_URL = "my.chruutundruebli.com"
 SHARE_PRICE = "300"
