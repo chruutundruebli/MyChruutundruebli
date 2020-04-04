@@ -169,3 +169,5 @@ STYLE_SHEET = "/static/css/cur_solawi_skeleton_style.css"
 BYLAWS = "http://chruutundruebli.com/dokumente/"
 BUSINESS_REGULATIONS = "http://chruutundruebli.com/dokumente/"
 BUSINESS_YEAR_START = {"day":1, "month":4}
+FAQ_DOC = "https://solawi.chruutundruebli.com/"
+FAVICON = "https://solawi.chruutundruebli.com/wp-content/uploads/2020/01/Zeichenfl%C3%A4che-1-1-300x300.png"
