@@ -170,3 +170,6 @@ BYLAWS = "http://chruutundruebli.com/dokumente/"
 BUSINESS_REGULATIONS = "http://chruutundruebli.com/dokumente/"
 BUSINESS_YEAR_START = {"day":1, "month":4}
 FAQ_DOC = "https://solawi.chruutundruebli.com/"
+FAVICON = "/static/img/favicon.ico"
+
+
