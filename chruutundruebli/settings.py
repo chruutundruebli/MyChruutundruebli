@@ -155,7 +155,7 @@ ORGANISATION_ADDRESS = {"name":"Chruut und Ruebli",
             "number" : "77",
             "zip" : "8180",
             "city" : "Bülach"}
-ORGANISATION_BANK_CONNECTION = {"IBAN" : "CH96 8080 8006 9753 1464 5",
+ORGANISATION_BANK_CONNECTION = {"IBAN" : "CH10 8080 8005 2773 1829 2",
             "BIC" : "RAIFCH22XXX",
             "NAME" : "Raiffeisen",
             "ESR" : ""}
