@@ -155,6 +155,7 @@ ORGANISATION_ADDRESS = {"name":"Chruut und Ruebli",
             "number" : "77",
             "zip" : "8180",
             "city" : "Bülach"}
+ORGANISATION_PHONE = "+41 32 511 66 87"
 ORGANISATION_BANK_CONNECTION = {"IBAN" : "CH96 8080 8006 9753 1464 5",
             "BIC" : "RAIFCH22XXX",
             "NAME" : "Raiffeisen",
