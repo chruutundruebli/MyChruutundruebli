@@ -16,8 +16,7 @@ from django.conf.urls import include, url
 from django.urls import path
 from django.contrib import admin
 import juntagrico
-import chruutundruebli
-from chrutundruebli import views as cviews
+from chruutundruebli import views as cviews
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
