@@ -33,6 +33,11 @@ INSTALLED_APPS = [
     'chruutundruebli',
 ]
 
+ADMINS = [
+    ('Admin', os.environ.get('JUNTAGRICO_ADMIN_EMAIL'))
+]
+MANAGERS = ADMINS
+
 ROOT_URLCONF = 'chruutundruebli.urls'
 
 DATABASES = {
