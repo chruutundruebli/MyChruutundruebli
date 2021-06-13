@@ -31,6 +31,7 @@ INSTALLED_APPS = [
     'impersonate',
     'crispy_forms',
     'chruutundruebli',
+    'adminsortable2',
 ]
 
 ADMINS = [
