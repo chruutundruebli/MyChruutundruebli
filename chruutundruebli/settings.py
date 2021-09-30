@@ -32,6 +32,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'chruutundruebli',
     'adminsortable2',
+    'dbexport.apps.DbexportConfig',
 ]
 
 ADMINS = [

@@ -17,6 +17,7 @@ from django.urls import path
 from django.contrib import admin
 import juntagrico
 from chruutundruebli import views as cviews
+from dbexport import views as dbexportviews
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -25,5 +26,6 @@ urlpatterns = [
     url(r'^impersonate/', include('impersonate.urls')),
 
     #export
-    path('my/export/subscriptions', cviews.excel_export_subscriptions, name='export-subscriptions')
+    path('my/export/subscriptions', cviews.excel_export_subscriptions, name='export-subscriptions'),
+    path('my/export/db-export', dbexportviews.db_export, name='export-db')
 ]
