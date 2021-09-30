@@ -51,4 +51,14 @@
             </a>
         </div>
     </div>
+    <div class="row mb-4">
+        <div class="col-md-3">
+            DB Export
+        </div>
+        <div class="col-md-9">
+            <a href="{% url 'export-db' %}">
+                {% trans "exportieren" %}
+            </a>
+        </div>
+    </div>
 {% endblock %}
