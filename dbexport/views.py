@@ -6,6 +6,6 @@ from django.views.static import serve
 @permission_required('juntagrico.can_view_exports')
 def db_export(request):
   filepath = './db.json'
-  with open(filepath, 'w') as f:
-    call_command('dumpdata', stdout=f)
+  # with open(filepath, 'w') as f:
+  #   call_command('dumpdata', stdout=f)
   return serve(request, os.path.basename(filepath), os.path.dirname(filepath))
