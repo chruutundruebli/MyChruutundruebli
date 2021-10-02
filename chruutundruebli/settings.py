@@ -94,6 +94,8 @@ USE_L10N = True
 
 DATE_INPUT_FORMATS =['%d.%m.%Y',]
 
+USE_TZ = True
+
 AUTHENTICATION_BACKENDS = (
     'juntagrico.util.auth.AuthenticateWithEmail',
     'django.contrib.auth.backends.ModelBackend'
