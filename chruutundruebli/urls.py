@@ -27,5 +27,6 @@ urlpatterns = [
 
     #export
     path('my/export/subscriptions', cviews.excel_export_subscriptions, name='export-subscriptions'),
-    path('my/export/db-export', dbexportviews.db_export, name='export-db')
+    path('my/export/db-export', dbexportviews.db_export, name='export-db'),
+    path('my/export/db-export-generate', dbexportviews.db_export_generate, name='generate-export-db')
 ]
