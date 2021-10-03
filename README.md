@@ -84,21 +84,6 @@ More complex
 
 you have to login to a heroku bash and setup the db and create the admin user as desbribed in the UNIX section
     
-## Docker images
-This image can be used to simulate the production environment as it uses nginx in front of Django.
-
-### Create docker image
-
-Run `build_docker_image.sh`
-
-### Start docker image
-
-`run_docker_image.sh` starts the application on localhost port 80.
-Use the following credentials to login
-- username: superadmin
-- pwd: 1234
-
-
     
 
 
