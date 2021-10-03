@@ -24,6 +24,7 @@ urlpatterns = [
     url(r'^', include('juntagrico.urls')),
     url(r'^$', juntagrico.views.home),
     url(r'^impersonate/', include('impersonate.urls')),
+    url(r'^', include('juntagrico_billing.urls')),
 
     #export
     path('my/export/subscriptions', cviews.excel_export_subscriptions, name='export-subscriptions'),
