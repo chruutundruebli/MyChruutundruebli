@@ -3,6 +3,14 @@ version: "3.9"
 services:
   web:
     build: .
+    volumes:
+       - db-data:/code/MyChruutundruebli/db
+    environment:
+      JUNTAGRICO_SECRET_KEY: fake-key
+      DJANGO_SUPERUSER_PASSWORD: 1234
     command: ./startup.sh
     ports:
       - "80:80"
+
+volumes:
+  db-data:

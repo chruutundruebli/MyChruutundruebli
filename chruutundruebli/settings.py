@@ -45,7 +45,7 @@ ROOT_URLCONF = 'chruutundruebli.urls'
 DATABASES = {
     'default': {
         'ENGINE': os.environ.get('JUNTAGRICO_DATABASE_ENGINE','django.db.backends.sqlite3'), 
-        'NAME': os.environ.get('JUNTAGRICO_DATABASE_NAME','chruutundruebli.db'), 
+        'NAME': os.environ.get('JUNTAGRICO_DATABASE_NAME','db/chruutundruebli.db'), 
         'USER': os.environ.get('JUNTAGRICO_DATABASE_USER'), #''junatagrico', # The following settings are not used with sqlite3:
         'PASSWORD': os.environ.get('JUNTAGRICO_DATABASE_PASSWORD'), #''junatagrico',
         'HOST': os.environ.get('JUNTAGRICO_DATABASE_HOST'), #'localhost', # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.

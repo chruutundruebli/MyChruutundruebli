@@ -3,7 +3,6 @@
 rm -rf docker/resources/MyChruutundruebli
 mkdir docker/resources/MyChruutundruebli
 
-cp -r __pycache__ docker/resources/MyChruutundruebli
 cp -r chruutundruebli docker/resources/MyChruutundruebli
 cp -r dbexport docker/resources/MyChruutundruebli
 cp -r templates docker/resources/MyChruutundruebli
