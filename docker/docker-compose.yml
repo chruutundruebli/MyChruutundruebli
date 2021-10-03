@@ -7,6 +7,7 @@ services:
        - db-data:/code/MyChruutundruebli/db
     environment:
       JUNTAGRICO_SECRET_KEY: fake-key
+      DJANGO_SUPERUSER_USERNAME: superadmin
       DJANGO_SUPERUSER_PASSWORD: 1234
     command: ./startup.sh
     ports:
