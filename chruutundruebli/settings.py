@@ -33,7 +33,7 @@ INSTALLED_APPS = [
     'chruutundruebli',
     'adminsortable2',
     'dbexport.apps.DbexportConfig',
-    'juntagrico_billing',
+    # 'juntagrico_billing',
 ]
 
 ADMINS = [
