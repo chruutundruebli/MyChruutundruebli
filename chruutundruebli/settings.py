@@ -180,7 +180,7 @@ GOOGLE_API_KEY = os.environ.get("GOOGLE_API_KEY")
 STYLE_SHEET = "/static/css/cur_solawi_skeleton_style.css"
 BYLAWS = "http://chruutundruebli.com/dokumente/"
 BUSINESS_REGULATIONS = "http://chruutundruebli.com/dokumente/"
-BUSINESS_YEAR_START = {"day":1, "month":4}
+BUSINESS_YEAR_START = {"day":1, "month":1}
 FAQ_DOC = "https://solawi.chruutundruebli.com/"
 
 
