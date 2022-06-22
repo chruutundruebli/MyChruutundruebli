@@ -33,6 +33,7 @@ INSTALLED_APPS = [
     'chruutundruebli',
     'adminsortable2',
     'dbexport.apps.DbexportConfig',
+    'polymorphic'
 ]
 
 ADMINS = [
@@ -108,7 +109,8 @@ MIDDLEWARE = [
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
-    'impersonate.middleware.ImpersonateMiddleware'
+    'impersonate.middleware.ImpersonateMiddleware',
+    'django.contrib.sites.middleware.CurrentSiteMiddleware'
 ]
 
 EMAIL_HOST = os.environ.get('JUNTAGRICO_EMAIL_HOST')
@@ -173,14 +175,14 @@ ORGANISATION_BANK_CONNECTION = {"IBAN" : "CH96 8080 8006 9753 1464 5",
             "ESR" : ""}
 INFO_EMAIL = "kontakt@chruutundruebli.com"
 SERVER_URL = "www.chruutundruebli.com/SoLaWi" #Webseite unter "Kontakt" auf der Homepage
-ADMINPORTAL_NAME = "my.chruutundruebli.com"
-ADMINPORTAL_SERVER_URL = "my.chruutundruebli.com"
+# ADMINPORTAL_NAME = "my.chruutundruebli.com" #Not used in 1.5.0 upward
+# ADMINPORTAL_SERVER_URL = "my.chruutundruebli.com" #Not used in 1.5.0 upward
 SHARE_PRICE = "300"
 GOOGLE_API_KEY = os.environ.get("GOOGLE_API_KEY")
-STYLE_SHEET = "/static/css/cur_solawi_skeleton_style.css"
+# STYLE_SHEET = "/static/css/cur_solawi_skeleton_style.css"
+STYLES = {'static': ['css/cur_solawi_skeleton_style.css']}
 BYLAWS = "http://chruutundruebli.com/dokumente/"
 BUSINESS_REGULATIONS = "http://chruutundruebli.com/dokumente/"
 BUSINESS_YEAR_START = {"day":1, "month":1}
 FAQ_DOC = "https://solawi.chruutundruebli.com/"
-
-
+STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.ManifestStaticFilesStorage'
