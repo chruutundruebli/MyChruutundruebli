@@ -186,3 +186,4 @@ BUSINESS_REGULATIONS = "http://chruutundruebli.com/dokumente/"
 BUSINESS_YEAR_START = {"day":1, "month":1}
 FAQ_DOC = "https://solawi.chruutundruebli.com/"
 STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.ManifestStaticFilesStorage'
+TIME_ZONE='Europe/Zurich'
