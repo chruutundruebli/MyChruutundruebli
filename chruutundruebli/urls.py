@@ -21,6 +21,7 @@ from dbexport import views as dbexportviews
 
 urlpatterns = [
     re_path(r'^admin/', admin.site.urls),
+    re_path(r'^', include('juntagrico.urls')),
     re_path(r'^', include('juntagrico_pg.urls')),
     re_path(r'^$', juntagrico.views.home),
     re_path(r'^impersonate/', include('impersonate.urls')),
