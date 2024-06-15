@@ -27,11 +27,13 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.admin',
-    'juntagrico',
+    'chruutundruebli',
     'juntagrico_pg',
+    'juntagrico',
+    'fontawesomefree',
+    'import_export',
     'impersonate',
     'crispy_forms',
-    'chruutundruebli',
     'adminsortable2',
     'dbexport.apps.DbexportConfig',
     'polymorphic'
@@ -43,6 +45,8 @@ ADMINS = [
 MANAGERS = ADMINS
 
 ROOT_URLCONF = 'chruutundruebli.urls'
+
+IMPORT_EXPORT_EXPORT_PERMISSION_CODE = 'view'
 
 DATABASES = {
     'default': {
@@ -145,7 +149,7 @@ IMPERSONATE = {
     'REDIRECT_URL': '/my/profile',
 }
 
-LOGIN_REDIRECT_URL = "/my/home"
+LOGIN_REDIRECT_URL = ""
 
 """
     File & Storage Settings
@@ -174,8 +178,13 @@ ORGANISATION_BANK_CONNECTION = {"IBAN" : "CH96 8080 8006 9753 1464 5",
             "BIC" : "RAIFCH22XXX",
             "NAME" : "Raiffeisen",
             "ESR" : ""}
-INFO_EMAIL = "kontakt@chruutundruebli.com"
-SERVER_URL = "www.chruutundruebli.com/SoLaWi" #Webseite unter "Kontakt" auf der Homepage
+CONTACTS = {
+    "general": "kontakt@chruutundruebli.com"
+}
+ORGANISATION_WEBSITE = {
+    'name': "www.chruutundruebli.com/SoLaWi",
+    'url': "https://www.chruutundruebli.com/SoLaWi"
+}
 # ADMINPORTAL_NAME = "my.chruutundruebli.com" #Not used in 1.5.0 upward
 # ADMINPORTAL_SERVER_URL = "my.chruutundruebli.com" #Not used in 1.5.0 upward
 SHARE_PRICE = "300"
@@ -186,5 +195,12 @@ BYLAWS = "http://chruutundruebli.com/dokumente/"
 BUSINESS_REGULATIONS = "http://chruutundruebli.com/dokumente/"
 BUSINESS_YEAR_START = {"day":1, "month":1}
 FAQ_DOC = "https://solawi.chruutundruebli.com/"
-STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.ManifestStaticFilesStorage'
+STORAGES = {
+    "default": {
+        "BACKEND": "django.core.files.storage.FileSystemStorage",
+    },
+    "staticfiles": {
+        "BACKEND": "django.contrib.staticfiles.storage.ManifestStaticFilesStorage",
+    },
+}
 TIME_ZONE='Europe/Zurich'
