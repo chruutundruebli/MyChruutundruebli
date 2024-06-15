@@ -151,7 +151,7 @@ IMPERSONATE = {
     'REDIRECT_URL': '/my/profile',
 }
 
-LOGIN_REDIRECT_URL = ""
+LOGIN_REDIRECT_URL = "/"
 
 """
     File & Storage Settings
