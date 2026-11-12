@@ -4,6 +4,8 @@ Django settings for chruutundruebli project.
 
 import os
 
+from juntagrico import defaults
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -14,7 +16,8 @@ SECRET_KEY = os.environ.get('JUNTAGRICO_SECRET_KEY')
 
 DEBUG = os.environ.get("JUNTAGRICO_DEBUG", 'True')=='True'
 
-ALLOWED_HOSTS = ['my.chruutundruebli.com','cur.juntagrico.science', 'localhost',]
+if allowed_hosts := os.environ.get('JUNTAGRICO_DOMAINS', False):
+    ALLOWED_HOSTS = allowed_hosts.split(',')
 
 
 # Application definition
@@ -26,17 +29,18 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django.contrib.admin',
+    'juntagrico.apps.JuntagricoAdminConfig',
     'chruutundruebli',
     'juntagrico_pg',
     'juntagrico',
-    'fontawesomefree',
     'import_export',
     'impersonate',
     'crispy_forms',
+    'crispy_bootstrap4',
     'adminsortable2',
-    'dbexport.apps.DbexportConfig',
-    'polymorphic'
+    'polymorphic',
+    'django_select2',
+    'djrichtextfield',
 ]
 
 ADMINS = [
@@ -63,6 +67,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
                 'django.contrib.auth.context_processors.auth',
@@ -73,10 +78,7 @@ TEMPLATES = [
                 'django.template.context_processors.tz',
                 'django.contrib.messages.context_processors.messages',
                 'django.template.context_processors.request',
-            ],
-            'loaders': [
-                'django.template.loaders.filesystem.Loader',
-                'django.template.loaders.app_directories.Loader'
+                'juntagrico.context_processors.vocabulary',
             ],
             'debug' : True
         },
@@ -88,15 +90,13 @@ WSGI_APPLICATION = 'chruutundruebli.wsgi.application'
 
 LANGUAGE_CODE = 'de'
 
+DJRICHTEXTFIELD_CONFIG = defaults.richtextfield_config(LANGUAGE_CODE)
+
 SITE_ID = 1
 
 # If you set this to False, Django will make some optimizations so as not
 # to load the internationalization machinery.
 USE_I18N = True
-
-# If you set this to False, Django will not format dates, numbers and
-# calendars according to the current locale.
-USE_L10N = True
 
 DATE_INPUT_FORMATS =['%d.%m.%Y',]
 
@@ -125,7 +125,7 @@ EMAIL_PORT = int(os.environ.get('JUNTAGRICO_EMAIL_PORT', '25' ))
 EMAIL_USE_TLS = os.environ.get('JUNTAGRICO_EMAIL_TLS', 'False')=='True'
 EMAIL_USE_SSL = os.environ.get('JUNTAGRICO_EMAIL_SSL', 'False')=='True'
 
-SESSION_SERIALIZER = 'django.contrib.sessions.serializers.PickleSerializer'
+EMAIL_BACKEND = 'juntagrico.backends.email.EmailBackend'
 
 WHITELIST_EMAILS = []
 
@@ -151,16 +151,12 @@ IMPERSONATE = {
 
 LOGIN_REDIRECT_URL = "/"
 
-"""
-    File & Storage Settings
-"""
-ADMIN_MEDIA_PREFIX = STATIC_URL + 'admin/'
-
 MEDIA_ROOT = 'media'
 
 """
      Crispy Settings
 """
+CRISPY_ALLOWED_TEMPLATE_PACKS = 'bootstrap4'
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 """
@@ -168,22 +164,22 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 """
 ORGANISATION_NAME = "Chruut und Ruebli"
 ORGANISATION_LONG_NAME = "Chruut und Ruebli"
-ORGANISATION_ADDRESS = {"name":"Chruut und Ruebli", 
-            "street" : "Dachslenbergstrasse",
-            "number" : "77",
-            "zip" : "8180",
-            "city" : "Bülach"}
+ORGANISATION_ADDRESS = {"name": "Chruut und Ruebli",
+                        "street": "Dachslenbergstrasse",
+                        "number": "77",
+                        "zip": "8180",
+                        "city": "Bülach"}
 ORGANISATION_PHONE = "+41 32 511 66 87"
-ORGANISATION_BANK_CONNECTION = {"IBAN" : "CH96 8080 8006 9753 1464 5",
-            "BIC" : "RAIFCH22XXX",
-            "NAME" : "Raiffeisen",
-            "ESR" : ""}
+ORGANISATION_BANK_CONNECTION = {"IBAN": "CH96 8080 8006 9753 1464 5",
+                                "BIC": "RAIFCH22XXX",
+                                "NAME": "Raiffeisen",
+                                "ESR": ""}
 CONTACTS = {
     "general": "kontakt@chruutundruebli.com"
 }
 ORGANISATION_WEBSITE = {
-    'name': "www.chruutundruebli.com/SoLaWi",
-    'url': "https://www.chruutundruebli.com/SoLaWi"
+    'name': "chruutundruebli.com",
+    'url': "https://solawi.chruutundruebli.com"
 }
 # ADMINPORTAL_NAME = "my.chruutundruebli.com" #Not used in 1.5.0 upward
 # ADMINPORTAL_SERVER_URL = "my.chruutundruebli.com" #Not used in 1.5.0 upward
@@ -204,3 +200,8 @@ STORAGES = {
     },
 }
 TIME_ZONE='Europe/Zurich'
+
+# Staging
+if os.environ.get('JUNTAGRICO_STAGING') == '1':
+    # E-Mails Deaktivieren
+    EMAIL_BACKEND = "django.core.mail.backends.dummy.EmailBackend"
