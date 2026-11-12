@@ -16,7 +16,8 @@ SECRET_KEY = os.environ.get('JUNTAGRICO_SECRET_KEY')
 
 DEBUG = os.environ.get("JUNTAGRICO_DEBUG", 'True')=='True'
 
-ALLOWED_HOSTS = ['my.chruutundruebli.com','cur.juntagrico.science', 'localhost',]
+if allowed_hosts := os.environ.get('JUNTAGRICO_DOMAINS', False):
+    ALLOWED_HOSTS = allowed_hosts.split(',')
 
 
 # Application definition
@@ -199,3 +200,8 @@ STORAGES = {
     },
 }
 TIME_ZONE='Europe/Zurich'
+
+# Staging
+if os.environ.get('JUNTAGRICO_STAGING') == '1':
+    # E-Mails Deaktivieren
+    EMAIL_BACKEND = "django.core.mail.backends.dummy.EmailBackend"
