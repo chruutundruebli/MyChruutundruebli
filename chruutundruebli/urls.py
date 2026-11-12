@@ -12,21 +12,18 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.conf.urls import include
-from django.urls import path, re_path
+from django.urls import path, include
 from django.contrib import admin
 import juntagrico
 from chruutundruebli import views as cviews
-from dbexport import views as dbexportviews
 
 urlpatterns = [
-    re_path(r'^admin/', admin.site.urls),
-    re_path(r'^', include('juntagrico.urls')),
-    re_path(r'^', include('juntagrico_pg.urls')),
-    re_path(r'^impersonate/', include('impersonate.urls')),
+    path('admin/', admin.site.urls),
+    path('', include('juntagrico.urls')),
+    path('', include('juntagrico_pg.urls')),
+    path('impersonate/', include('impersonate.urls')),
 
     #export
+    path('my/export', cviews.export, name='export'),
     path('my/export/subscriptions', cviews.excel_export_subscriptions, name='export-subscriptions'),
-    path('my/export/db-export', dbexportviews.db_export, name='export-db'),
-    path('my/export/db-export-generate', dbexportviews.db_export_generate, name='generate-export-db')
 ]

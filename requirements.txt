@@ -1,6 +1,6 @@
-juntagrico~=1.6.0
-gunicorn==22.0.0
-psycopg>=3.1.8
+juntagrico~=2.0
+gunicorn>=25.1.0
+psycopg[binary]>=3.1.8
 openpyxl==3.0.3
-juntagrico-pg~=1.6.0
+juntagrico-pg~=2.0
 faker>=18.9.0
